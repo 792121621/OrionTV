@@ -223,7 +223,7 @@ export default function PlayScreen() {
       >
         {/* 条件渲染Video组件：只有在有有效URL时才渲染 */}
         {currentEpisode?.url ? (
-          <Video ref={videoRef} style={dynamicStyles.videoPlayer} {...videoProps} />
+          <Video ref={videoRef} style={dynamicStyles.videoPlayer} shouldCorrectPitch={true} {...videoProps} />
         ) : (
           <LoadingContainer style={dynamicStyles.loadingContainer} currentEpisode={currentEpisode} />
         )}
