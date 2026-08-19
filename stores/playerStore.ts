@@ -75,7 +75,7 @@ const usePlayerStore = create<PlayerState>((set, get) => ({
   seekPosition: 0,
   progressPosition: 0,
   initialPosition: 0,
-  playbackRate: 1.0,
+  playbackRate: 1.25,
   introEndTime: undefined,
   outroStartTime: undefined,
   _seekTimeout: undefined,
@@ -205,7 +205,7 @@ const usePlayerStore = create<PlayerState>((set, get) => ({
       logger.info(`[PERF] Total storage operations took ${(storageEnd - storageStart).toFixed(2)}ms`);
       
       const initialPositionFromRecord = playRecord?.play_time ? playRecord.play_time * 1000 : 0;
-      const savedPlaybackRate = playerSettings?.playbackRate || 1.0;
+      const savedPlaybackRate = playerSettings?.playbackRate || 1.25;
       
       const episodesMappingStart = performance.now();
       const mappedEpisodes = episodes.map((ep, index) => ({
@@ -463,7 +463,7 @@ const usePlayerStore = create<PlayerState>((set, get) => ({
       showSpeedModal: false,
       showNextEpisodeOverlay: false,
       initialPosition: 0,
-      playbackRate: 1.0,
+      playbackRate: 1.25,
       introEndTime: undefined,
       outroStartTime: undefined,
     });
